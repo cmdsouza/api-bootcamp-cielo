@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+// Importa o módulo cors
+const cors = require('cors');
+
+// Adiciona o middleware cors ao seu aplicativo Express
+app.use(cors());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/data', (req, res) => {
